@@ -12,11 +12,31 @@ const licenseLinks = [
   'https://unlicense.org/',
 ]
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if(data.license === 'Apache License 2.0'){
+    return licenseBadges[0];
+  } else if (data.license === 'MIT License') {
+    return licenseBadges[1];
+  } else if (data.license === 'Mozilla Public License 2.0') {
+    return licenseBadges[2];
+  } else {
+    return licenseBadges[3];
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if(data.license === 'Apache License 2.0'){
+    return licenseLinks[0];
+  } else if (data.license === 'MIT License') {
+    return licenseLinks[1];
+  } else if (data.license === 'Mozilla Public License 2.0') {
+    return licenseLinks[2];
+  } else {
+    return licenseLinks[3];
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string

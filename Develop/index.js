@@ -86,8 +86,8 @@ init();
 
 //prompts user to answer questions
 inquirer.prompt(questions)
-.then((response) => {
-    fs.writeFile('ReadME.md', JSON.stringify(response), (error) => {
+.then((data) => {
+    fs.writeFile('ReadME.md', JSON.stringify(data), (error) => {
     return error
     ? console.error(error)
     : console.log('File written sucessfully!');
