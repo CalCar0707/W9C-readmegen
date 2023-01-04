@@ -19,8 +19,10 @@ function renderLicenseBadge(license) {
     return licenseBadges[1];
   } else if (data.license === 'Mozilla Public License 2.0') {
     return licenseBadges[2];
-  } else {
+  } else if (data.license === 'The Unlicense') {
     return licenseBadges[3];
+  } else {
+    return '';
   }
 }
 
@@ -33,19 +35,28 @@ function renderLicenseLink(license) {
     return licenseLinks[1];
   } else if (data.license === 'Mozilla Public License 2.0') {
     return licenseLinks[2];
-  } else {
+  } else if (data.license === 'The Unilicense') {
     return licenseLinks[3];
+  } else {
+    return '';
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-`;
+  return `# ${data.title},
+  ## ${data.description},
+  ## ${data.table},
+  ## ${data.installation},
+  ## ${data.usage},
+  ## ${data.license},
+  ## ${data.contributors},
+  ## ${data.testing},
+  ## ${data.github}, ${data.email},
+  `;
 }
 
 module.exports = generateMarkdown;
