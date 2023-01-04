@@ -36,16 +36,17 @@ const questions = [
         message: 'Add any additional usage information for the user:',
         
     },
-    //{
-      //  type: 'checkbox',
-       // name: 'license',
-        //message: 'Please choose a license for your project:',
-        //choices: [  INSERT LICENSE CHOICES
-          //  '',
-            //'',
-            //''
-        //]
-    //},
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Please choose a license for your project:',
+        choices: [ 
+            'Apache License 2.0', 
+            'MIT License',
+            'Mozilla Public License 2.0',
+            'The Unilicense',
+        ]
+    },
     {
         type: 'input',
         name: 'contributors',
