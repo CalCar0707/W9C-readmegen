@@ -22,11 +22,6 @@ const questions = [
         message: 'Please provide a project description.',
     
     },
-    {
-        type: 'input',
-        name: 'table',
-        message: 'Please provide a Table of Contents.'
-    },
     { 
         type: 'input',
         name: 'installation',
