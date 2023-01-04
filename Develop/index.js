@@ -19,6 +19,11 @@ const questions = [
         message: 'Please provide a project description.',
     
     },
+    {
+        type: 'input',
+        name: 'table',
+        message: 'Please provide a Table of Contents.'
+    },
     { 
         type: 'input',
         name: 'installation',
@@ -31,6 +36,16 @@ const questions = [
         message: 'Add any additional usage information for the user:',
         
     },
+    //{
+      //  type: 'checkbox',
+       // name: 'license',
+        //message: 'Please choose a license for your project:',
+        //choices: [  INSERT LICENSE CHOICES
+          //  '',
+            //'',
+            //''
+        //]
+    //},
     {
         type: 'input',
         name: 'contributors',
@@ -43,16 +58,17 @@ const questions = [
         message: 'Please provide test insructions:',
     
     },
-    //{
-      //  type: 'checkbox',
-       // name: 'license',
-        //message: 'Please choose a license for your project:',
-        //choices: [  INSERT LICENSE CHOICES
-          //  '',
-            //'',
-            //''
-        //]
-    //}
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please  provide your GitHub username for questions:',
+    },
+    {
+        type: 'email',
+        name: 'email',
+        message: 'Please provide your email address',
+    }
+    
 ];
 
 // TODO: Create a function to write README file
@@ -63,3 +79,15 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+//prompts user to answer questions
+inquirer.prompt(questions)
+.then((response) => {
+    fs.writeFile('ReadME.md', JSON.stringify(response), (error) => {
+    return error
+    ? console.error(error)
+    : console.log('File written sucessfully!');
+    }
+    )}
+);
+// response.confirm  reponse.title, reponse.testing and on and on)
